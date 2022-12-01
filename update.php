@@ -10,9 +10,8 @@ if (isset($_POST['verzenden'])) {
 
 
 
-    $query = $db->prepare("UPDATE resultaten SET leerling = :leerling, vak = :vak, cijfer = :cijfer WHERE id = :id");
+    $query = $db->prepare("UPDATE resultaten SET  vak = :vak, cijfer = :cijfer WHERE id = :id");
 
-    $query->bindParam("leerling", $leerling);
     $query->bindParam("vak", $vak);
     $query->bindParam("cijfer", $cijfer);
     $query->bindParam("id",$_GET['id']);
@@ -46,8 +45,8 @@ if (isset($_POST['verzenden'])) {
 <h4>
     <div class="container">
         <form method="post">
-            <label>leerling</label>
-            <input type="text" name="leerling" value="<?php echo $leerling; ?>"><br>
+            <label>leerling: <?php echo $leerling; ?></label>
+            <br>
             <label>vak</label>
             <input type="text" name="vak" value="<?php echo $vak; ?>"><br>
             <label>cijfer</label>

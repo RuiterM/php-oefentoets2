@@ -7,12 +7,13 @@ $cijfers = $query->fetchAll(PDO::FETCH_ASSOC);
 $teller = 1;
 
 echo "<div class='container'>";
-echo "<table>";
+echo "<table class='table'>";
 echo "<tr>";
 echo "<td style='border: solid black 2px'>Nummer</td>";
 echo "<td style='border: solid black 2px'>Leerling</td>";
 echo "<td style='border: solid black 2px'>Vak</td>";
 echo "<td style='border: solid black 2px'>Cijfer</td>";
+
 
 
 echo "</tr>";
@@ -25,6 +26,11 @@ foreach ($cijfers as $cijfer) {
     echo "<td>";
     echo "<a href='update.php?id=".$cijfer['id']. "'>";
     echo "Update";
+    echo "</a><br>";
+    echo "</td>";
+    echo "<td>";
+    echo "<a href='detail.php?id=".$cijfer['id']. "'>";
+    echo "Detail";
     echo "</a><br>";
     echo "</td>";
     echo "<td style='padding-left: 10px'>";
